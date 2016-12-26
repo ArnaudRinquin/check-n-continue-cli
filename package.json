@@ -1,0 +1,25 @@
+{
+  "name": "check-n-continue-cli",
+  "version": "0.0.0",
+  "description": "A CLI that blocks until a test passes (or fails after after too many retries)",
+  "main": "index.js",
+  "scripts": {
+    "test1": "./cli.js -m test/pass.js && exit 0;",
+    "test2": "./cli.js -d 20 -r 3 -m test/fail.js > /dev/null 2>&1; if [ $? -eq 0 ]; then exit 1; else exit 0; fi",
+    "test": "npm run test1 && npm run test2"
+  },
+  "keywords": [
+    "cli",
+    "check",
+    "test"
+  ],
+  "bin": {
+    "check-n-continue": "./cli.js"
+  },
+  "author": "Arnaud Rinquin",
+  "license": "MIT",
+  "dependencies": {
+    "@songkick/promise-retry": "^1.2.1",
+    "minimist": "^1.2.0"
+  }
+}
