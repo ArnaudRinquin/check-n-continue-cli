@@ -1,6 +1,6 @@
 {
   "name": "check-n-continue-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A CLI that blocks until a test passes (or fails after after too many retries)",
   "main": "index.js",
   "scripts": {
